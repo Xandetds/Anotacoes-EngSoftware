@@ -1,6 +1,6 @@
-# 📝 Anotações de Faculdade
+#  📖 Anotações dos Estudos
 
-Este repositório reúne anotações produzidas ao longo da graduação, organizadas por disciplina em pastas separadas.  
+Este repositório reúne anotações produzidas ao longo de meus estudos da graduação e fora dela, organizadas por disciplina em pastas separadas.  
 Cada arquivo em **Markdown** contém conteúdos abordados nas aulas e em estudos complementares: resumos de textos, definições importantes, esquemas, exemplos práticos e observações relevantes.
 
 A proposta é manter um registro **limpo**, **organizado** e **acessível**, facilitando revisões de matérias e consultas rápidas a conceitos estudados ao longo dos semestres.  
@@ -20,4 +20,4 @@ Com o tempo, novos conteúdos serão adicionados e revisados, acompanhando o pro
 
 ---
 
-Este repositório funciona como um **registro permanente de estudos**, reunindo o desenvolvimento acadêmico ao longo da graduação e de estudos realizados fora dela.
+Este repositório funciona como um **registro conceitual de estudos**, reunindo o desenvolvimento acadêmico ao longo da graduação e de estudos realizados fora dela.
