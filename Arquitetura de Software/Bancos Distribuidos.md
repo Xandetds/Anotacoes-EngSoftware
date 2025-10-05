@@ -223,7 +223,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
 - Teste
     - Ao acessar o painel de métricas do cluster no **MongoDB Atlas**, é possível visualizar os três nós que compõem o **Replica Set**:
         
-        ![image.png](image%204.png)
+        ![image.png](docs/image%204.png)
         
     
     - Os nomes “`ac-fdco1lm-shard-00-00`, `-01` e `-02` representam os três servidores que mantêm cópias sincronizadas do banco de dados.
