@@ -1,23 +1,23 @@
-#  📖 Anotações dos Estudos
+# 📖 Anotações de Estudos
 
-Este repositório reúne anotações produzidas ao longo de meus estudos da graduação e fora dela, organizadas por disciplina em pastas separadas.  
-Cada arquivo em **Markdown** contém conteúdos abordados nas aulas e em estudos complementares: resumos de textos, definições importantes, esquemas, exemplos práticos e observações relevantes.
+Este repositório reúne as anotações produzidas ao longo da graduação e de estudos independentes, organizadas por disciplina em pastas separadas.  
+Cada arquivo em **Markdown** apresenta conteúdos abordados em aula ou em leituras complementares — incluindo resumos, definições, esquemas, exemplos práticos e observações relevantes.
 
-A proposta é manter um registro **limpo**, **organizado** e **acessível**, facilitando revisões de matérias e consultas rápidas a conceitos estudados ao longo dos semestres.  
-As pastas seguem a organização natural das disciplinas, sem subdivisões complexas, priorizando a clareza e a navegação direta.
+A proposta é manter um registro **limpo**, **organizado** e **acessível**, que facilite revisões de conteúdo e consultas rápidas a conceitos estudados durante o curso.  
+As pastas seguem a organização natural das disciplinas, priorizando a clareza e a navegação direta, sem subdivisões complexas.
 
-Os arquivos foram escritos em Markdown e exportados de minhas anotações do Notion.  
-Com o tempo, novos conteúdos serão adicionados e revisados, acompanhando o progresso das matérias e estudos complementares.
-
----
-
-✨ As anotações incluem:
-
-- 📚 Conteúdos abordados em sala e em leituras adicionais  
-- 📝 Resumos e esquemas organizados de forma objetiva  
-- 🧠 Definições importantes e exemplos práticos  
-- 📌 Observações que auxiliam na compreensão dos temas
+Todos os arquivos foram originalmente escritos no **Notion** e exportados em formato Markdown.  
+Com o tempo, novos conteúdos serão adicionados e revisados, acompanhando a evolução das matérias e dos estudos paralelos.
 
 ---
 
-Este repositório funciona como um **registro conceitual de estudos**, reunindo o desenvolvimento acadêmico ao longo da graduação e de estudos realizados fora dela.
+### Conteúdos incluídos
+
+- **Conteúdos abordados em sala e em leituras complementares**  
+- **Resumos e esquemas objetivos**  
+- **Definições e exemplos práticos**  
+- **Observações que auxiliam na compreensão dos temas**
+
+---
+
+Este repositório funciona como um **registro conceitual de aprendizado**, documentando o desenvolvimento acadêmico e técnico ao longo da graduação e de estudos extracurriculares.
