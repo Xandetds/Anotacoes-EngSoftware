@@ -46,7 +46,7 @@ Mesmo com vários usuários simultâneos, o desempenho fica travado por esse pon
 
 Nesta atividade, foi desenvolvida uma **API REST em** Typescript com Nest simulando um sistema de e-commerce.
 
-Repositório do código utilizado: [Arquitetura de software](https://github.com/Xandetds/Arquitetura-de-software)
+[Repositório do código utilizado](https://github.com/Xandetds/Arquitetura-de-software)
  
 
 O objetivo foi compreender como **otimizar o desempenho e a escalabilidade** identificando gargalos e implementando **cache com Redis**.
