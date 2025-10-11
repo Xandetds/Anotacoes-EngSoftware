@@ -4,9 +4,20 @@
 
 São sistemas em que os dados são armazenados em vários servidores localizados em diferentes lugares. Esses servidores trabalham juntos para fornecer o acesso aos dados como se fossem um só banco
 
+---
+
+<details>
+<summary><strong>Definição e diferença para bancos centralizados</strong></summary>
+
 ### Definição e diferença para bancos centralizados
 
 Todos os dados estão em um único servidor, em uma única localização física, o que é mais simples, porém mais propenso a falhas e problemas de escalabilidade. No caso dos distribuídos, os dados sã divididos em vários servidores, o que melhora a escalabilidade, a tolerância a falhas e o desempenho para acessos geograficamente distribuídos (como por exemplo, se tiver um servidor da Google em Urussanga, o desempenho será melhor do que se tiver somente um nos Estados Unidos).
+</details>
+
+---
+
+<details>
+<summary><strong>Principais motivações para usar (escalabilidade, disponibilidade, performance)</strong></summary>
 
 ### Principais motivações para usar (escalabilidade, disponibilidade, performance).
 
@@ -15,6 +26,12 @@ Todos os dados estão em um único servidor, em uma única localização física
 - Desempenho: Acesso mais rápido a dados, especialmente quando os usuário estão distribuídos geograficamente.
 - Alta disponibilidade: por ter varias cópias dos dados em vários locais, o sistema continua funcionando mesmo que uma parte falhe.
 - Escalabilidade horizontal: ao invés de melhorar um único servidor (escala vertical), podemos adicionar novos servidores à rede (escala horizontal), o que é mais barato e flexível.
+</details>
+
+---
+
+<details>
+<summary><strong>Teorema CAP</strong></summary>
 
 ### Teorema CAP
 
@@ -27,21 +44,26 @@ Todos os dados estão em um único servidor, em uma única localização física
 - Partition Tolerance: O sistema continua funcionando independentemente de falhas na comunicação entre servidores
     
     
-    ### Exemplo:
+#### Exemplo:
     
-    Supondo que temos dois servidores com o mesmo banco de dados (por exemplo, um em Urussanga e o outro na Islândia. Ocorreu um problema em se comunicar (isso é uma partição, o que já gasta um dos “usos”)
+Supondo que temos dois servidores com o mesmo banco de dados (por exemplo, um em Urussanga e o outro na Islândia. Ocorreu um problema em se comunicar (isso é uma partição, o que já gasta um dos “usos”)
     
-    Agora o sistema precisa escolher entre
+Agora o sistema precisa escolher entre
     
-    - Ser consistente (C): bloquear as operações até que o problema de comunicação seja resolvido, para não haver diferença entre os dados dos bancos
-        - Exemplo: sistemas bancários (não pode mostrar saldo errado).
-    - Ser disponível (A): continuar respondendo, mesmo que os dados fiquem diferentes temporariamente
-        - Exemplo: redes sociais (você ainda pode curtir algo, mesmo que demore pra aparecer pros outros).
-        
+- Ser consistente (C): bloquear as operações até que o problema de comunicação seja resolvido, para não haver diferença entre os dados dos bancos
+  - Exemplo: sistemas bancários (não pode mostrar saldo errado).
+- Ser disponível (A): continuar respondendo, mesmo que os dados fiquem diferentes temporariamente
+  - Exemplo: redes sociais (você ainda pode curtir algo, mesmo que demore pra aparecer pros outros).
+</details>
+
+---
+
+<details>
+<summary><strong>Modelos de Banco de Dados Distribuídos</strong></summary>
 
 ### Modelos de Banco de Dados Distribuídos
 
-- Fragmentado ou Particionado
+- **Fragmentado ou Particionado**
     
     Divide o banco em partes menores chamadas fragmentos, e cada fragmento fica armazenado em um servidor (nó) diferente
     
@@ -64,7 +86,7 @@ Todos os dados estão em um único servidor, em uma única localização física
     - Pode ser difícil de manter a integridade entre os fragmentos.
     - Consultas que exigem dados de várias regiões ficam mais lentas (precisam “juntar” tudo depois).
 
-- Replicado
+- **Replicado**
     
     Cada servidor guarda uma cópia completa do banco de dados. Quando um dado muda em um nó, ele é copiado para os outros
     
@@ -82,7 +104,7 @@ Todos os dados estão em um único servidor, em uma única localização física
     - Difícil manter a consistência entre todas as cópias (sincronização).
     - Custo alto de rede para replicar os dados constantemente.
 
-- Híbrido
+- **Híbrido**
     
     Combina os dois modelos anteriores: alguns dados são fragmentados, outros replicados.
     
@@ -99,6 +121,12 @@ Todos os dados estão em um único servidor, em uma única localização física
     **Desvantagens:**
     
     - Maior complexidade para gerenciar e sincronizar os dois tipos.
+</details>
+
+---
+
+<details>
+<summary><strong>Experimento Prático: MongoDB e Bancos de Dados Distribuídos</strong></summary>
 
 ### Experimento Prático: MongoDB e Bancos de Dados Distribuídos
 
@@ -112,7 +140,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
 
 ### Simulação de Distribuição
 
-- Configuração do ambiente
+- **Configuração do ambiente**
     - Foi criada uma base de dados chamada **`loja`**.
     - Dentro dela, foram geradas **4 coleções**:
         - `produtos` — coleção geral, contendo **todos os 500 produtos**.
@@ -132,7 +160,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
     
     - Foram inseridos **500 produtos no total**, com variação de nome, categoria, preço, estoque e região.
 
-- Consulta utilizada
+- **Consulta utilizada**
     - Para comparar o tempo de execução entre as coleções, foi utilizada a mesma consulta em todas elas.
     - A consulta seleciona produtos da categoria **“Eletrônicos”**, ordena pelo **maior preço** e limita o resultado aos **50 primeiros** itens.
         
@@ -153,8 +181,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
         - `produtos_norte`
         - `produtos_sudeste`
 
-- Resultados obtidos
-    
+- **Resultados obtidos**
     
     |                   **Coleção** |               **Tempo (ms)** |                **Observação** |
     | --- | --- | --- |
@@ -163,7 +190,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
     |              produtos_norte  |                     **25 ms** | Desempenho semelhante |
     |           produtos_sudeste |                     **23 ms** | Melhor resultado geral |
 
-- Evidências (Prints do terminal Mongosh)
+- **Evidências (Prints do terminal Mongosh)**
     - **Consulta – coleção geral (`produtos`)**
         
         ![image.png](docs/image.png)
@@ -181,7 +208,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
         ![image.png](docs/image%203.png)
         
 
-- Análise dos resultados
+- **Análise dos resultados**
     
     As diferenças de tempo foram pequenas (entre **23 ms e 26 ms**) devido a fatores como:
     
@@ -192,11 +219,16 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
     Mesmo assim, a simulação permitiu observar um **padrão consistente**: as coleções menores (regionais) responderam **ligeiramente mais rápido** do que a coleção centralizada.
     
     Isso ilustra, em escala reduzida, um dos benefícios da **distribuição de dados (sharding):** Reduzir a carga em uma única coleção e melhorar o tempo de resposta de consultas localizadas.
-    
+</details>
+
+---
+
+<details>
+<summary><strong>Teste de Replicação no MongoDB</strong></summary>
 
 ### Teste de Replicação no MongoDB
 
-- O que é
+- **O que é**
     
     A **replicação** é o mecanismo que o MongoDB usa para **garantir disponibilidade e tolerância a falhas**.
     
@@ -209,7 +241,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
     Esses nós mantêm os dados sincronizados automaticamente via **oplog (operation log)**.
     
 
-- Documentação técnica
+- **Documentação técnica**
     
     O MongoDB Atlas utiliza por padrão a arquitetura de **Replica Set**, garantindo alta disponibilidade dos dados.
     
@@ -220,7 +252,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
     Isso assegura que o sistema continue **operacional mesmo em casos de falha** (alta disponibilidade) e que **nenhum dado seja perdido** (consistência garantida pelo oplog).
     
 
-- Teste
+- **Teste**
     - Ao acessar o painel de métricas do cluster no **MongoDB Atlas**, é possível visualizar os três nós que compõem o **Replica Set**:
         
         ![image.png](docs/image%204.png)
@@ -231,7 +263,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
     - e os demais atuam como **Secondaries**, replicando os dados de forma contínua.
         
         
-    - Funcionamento da replicação
+    - **Funcionamento da replicação**
         
         O MongoDB utiliza um log interno chamado **oplog (operation log)**.
         
@@ -240,7 +272,7 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
         Esse processo acontece em tempo real e garante que todos os nós permaneçam sincronizados.
         
     
-    - Alta disponibilidade
+    - **Alta disponibilidade**
         
         Em caso de falha do nó principal (Primary), o sistema realiza automaticamente uma **eleição** entre os nós secundários.
         
@@ -249,12 +281,17 @@ O trabalho foi realizado utilizando o **MongoDB Atlas (cluster M0 gratuito)** e 
         Isso caracteriza a **alta disponibilidade**, um dos pilares dos sistemas distribuídos modernos.
         
 
-- Resumo
+- **Resumo**
     
     O teste de replicação confirmou que o MongoDB Atlas mantém múltiplas cópias do banco em diferentes servidores (Replica Set).
     
     Essa configuração assegura que o sistema continue ativo mesmo em caso de falha de um dos nós, oferecendo **disponibilidade contínua**, **redundância de dados** e **tolerância a falhas**.
-    
+</details>
+
+---
+
+<details>
+<summary><strong>Análise e Reflexão</strong></summary>
 
 ### Análise e Reflexão
 
@@ -274,12 +311,24 @@ Apesar dos bons resultados, alguns desafios e limitações foram identificados:
 - **Diferença pequena entre tempos**: como o ambiente de teste era pequeno (apenas 500 registros) e rodando em um único cluster, as variações de desempenho foram pequenas. Em um sistema real, com muito mais registros e servidores, a diferença seria muito maior
 - **Complexidade na configuração**: sistemas distribuídos precisam de maior atenção na configuração e manutenção, principalmente no controle de replicação, sincronização e resolução de conflitos.
 - **Consistência de dados**: em ambientes com muitos nós, garantir que todos estejam atualizados ao mesmo tempo pode ser um desafio, especialmente em sistemas que priorizam disponibilidade.
+</details>
+
+---
+
+<details>
+<summary><strong>Aplicação do Teorema CAP</strong></summary>
 
 ### Aplicação do Teorema CAP
 
 - No caso do **MongoDB**, ele prioriza **Disponibilidade (A)** e **Tolerância à Partição (P),** porquê o banco continua operando mesmo se parte da rede estiver indisponível.
 - Em cenários onde a aplicação precisa continuar ativa a todo custo (como e-commerce e sistemas de pedidos), a disponibilidade é priorizada.
 - Já em contextos financeiros, como bancos, ocorre o contrário, a prioridade é na consistência, mesmo que haja indisponibilidade.
+</details>
+
+---
+
+<details>
+<summary><strong>Cenários de uso</strong></summary>
 
 ### **Cenários de uso**
 
@@ -288,3 +337,4 @@ Apesar dos bons resultados, alguns desafios e limitações foram identificados:
     - **Aplicações de streaming ou redes sociais** – necessitam de alta disponibilidade e velocidade de leitura, com dados replicados em diversos servidores.
 - **Um banco centralizado seria melhor em:**
     - **Sistemas internos de controle financeiro**  onde a consistência dos dados é mais importante que a disponibilidade contínua (por exemplo, fechamento contábil e cálculos fiscais).
+</details>

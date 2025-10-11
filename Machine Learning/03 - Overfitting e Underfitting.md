@@ -8,6 +8,11 @@ Se o modelo for simples demais, ele não aprende o suficiente.
 
 Se for complexo demais, ele decora os dados.
 
+---
+
+<details>
+<summary><strong>Underfitting (Subajuste)</strong></summary>
+
 ## Underfitting (Subajuste)
 
 Acontece quando o modelo é **simples demais** para capturar os padrões dos dados.
@@ -22,8 +27,12 @@ Sintomas:
 Exemplo:
 
 Tentar ajustar uma **reta** simples a dados que claramente seguem uma curva.
+</details>
 
 ---
+
+<details>
+<summary><strong>Overfitting (Sobreajuste)</strong></summary>
 
 ## Overfitting (Sobreajuste)
 
@@ -39,8 +48,12 @@ Sintomas:
 Exemplo:
 
 Criar uma função super detalhada que passa exatamente por todos os pontos do treino, mas falha completamente ao prever novos exemplos.
+</details>
 
 ---
+
+<details>
+<summary><strong>Equilíbrio Ideal</strong></summary>
 
 ## Equilíbrio Ideal
 
@@ -50,8 +63,12 @@ O objetivo é encontrar um modelo que:
 - Generalize bem para dados novos.
 
 Esse equilíbrio é o que diferencia um modelo útil de um modelo que só funciona na teoria
+</details>
 
 ---
+
+<details>
+<summary><strong>Exemplo de Visualização</strong></summary>
 
 ## Exemplo de Visualização
 
@@ -62,8 +79,12 @@ Tem três curvas representando modelos diferentes:
 3. **Overfitting:** uma curva que passa exatamente por todos os pontos.
 
 O bom modelo está entre os dois extremos.
+</details>
 
 ---
+
+<details>
+<summary><strong>Estratégias para Evitar Overfitting</strong></summary>
 
 ## Estratégias para Evitar Overfitting
 
@@ -72,3 +93,4 @@ O bom modelo está entre os dois extremos.
 - Usar regularização (penaliza complexidade excessiva).
 - Aplicar validação cruzada (cross-validation).
 - Parar o treino no momento certo (early stopping), em redes neurais.
+</details>

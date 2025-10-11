@@ -4,6 +4,9 @@
 
 No Machine Learning, o tipo de problema depende do que queremos prever.
 
+<details>
+<summary><strong>Regressão</strong></summary>
+
 ### Regressão
 
 Usada quando o objetivo é **prever um valor numérico contínuo**.
@@ -15,6 +18,12 @@ Características:
 - O resultado é um **número real**.
 - Os erros são medidos por métricas como **MSE (Mean Squared Error)** e **R²**.
 - Pequenas diferenças são aceitáveis (por exemplo, prever R$ 498.000 em vez de R$ 500.000).
+</details>
+
+---
+
+<details>
+<summary><strong>Classificação</strong></summary>
 
 ### Classificação
 
@@ -27,8 +36,12 @@ Características:
 - O resultado é **uma classe** (rótulo).
 - Avaliada com métricas como **acurácia**, **precisão** e **recall**.
 - Pequenas diferenças **não são aceitáveis** (um erro muda completamente a classe).
+</details>
 
 ---
+
+<details>
+<summary><strong>Exemplos Práticos</strong></summary>
 
 ## Exemplos Práticos
 
@@ -38,11 +51,16 @@ Características:
 | Classificação | Identificar se um e-mail é spam | Categoria (“spam” / “não spam”) |
 | Regressão | Prever a idade de uma pessoa | Valor numérico |
 | Classificação | Determinar o tipo de animal em uma foto | Categoria (“gato”, “cachorro”) |
+</details>
 
 ---
+
+<details>
+<summary><strong>Como Saber Qual Tipo Usar</strong></summary>
 
 ## Como Saber Qual Tipo Usar
 
 1. Se o resultado for um número contínuo, use Regressão.
 2. Se o resultado for uma categoria, use Classificação.
 3. Se o problema envolver agrupamentos automáticos, sem resposta certa, use Aprendizado Não Supervisionado.
+</details>

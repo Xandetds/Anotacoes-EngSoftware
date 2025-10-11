@@ -2,6 +2,9 @@
 
 ## O que é o KNN
 
+<details>
+<summary><strong>O que é o KNN</strong></summary>
+
 O **k-Nearest Neighbors (k-Vizinhos Mais Próximos)** é um dos algoritmos mais simples de Machine Learning.
 
 Ele é usado tanto para **classificação** quanto para **regressão**, e funciona com base na **proximidade** entre os dados.
@@ -12,6 +15,12 @@ Ideia central:
 > 
 
 Por isso o nome “k-vizinhos mais próximos”.
+</details>
+
+---
+
+<details>
+<summary><strong>Como o KNN funciona</strong></summary>
 
 ## Como o KNN funciona
 
@@ -41,10 +50,14 @@ Por isso o nome “k-vizinhos mais próximos”.
     
 4. **Decidir a resposta**
     - **Para classificação:** o KNN escolhe a **classe mais comum** entre os vizinhos.
-    (Exemplo: se dos 5 vizinhos, 3 são da classe A e 2 da classe B, o resultado é A.)
+    (Exemplo: se dos 5 vizinhos, 3 são da classe A e 2 são da classe B, o resultado é A.)
     - **Para regressão:** o KNN tira a **média** dos valores dos vizinhos.
+</details>
 
 ---
+
+<details>
+<summary><strong>Exemplo prático</strong></summary>
 
 ## Exemplo prático
 
@@ -56,8 +69,12 @@ Quando inserimos uma nova fruta, o KNN vai:
 2. Pegar as 3 mais próximas (por exemplo, `k = 3`).
 3. Ver quais classes aparecem com mais frequência entre essas 3 frutas.
 4. Classificar a nova fruta como a classe predominante.
+</details>
 
 ---
+
+<details>
+<summary><strong>Escolha do valor de k</strong></summary>
 
 ## Escolha do valor de k
 
@@ -67,8 +84,12 @@ O valor de k é um dos fatores mais importantes para o desempenho do KNN.
 - Um k muito grande pode deixar o modelo genérico demais, ignorando detalhes importantes.
 
 Em geral, o valor de k é escolhido com base em experimentos com o conjunto de validação.
+</details>
 
 ---
+
+<details>
+<summary><strong>Tipos de distância</strong></summary>
 
 ## Tipos de distância
 
@@ -83,8 +104,12 @@ As principais são:
 | **Chebyshev** | Considera apenas o maior deslocamento em qualquer dimensão. | Movimento de uma torre no xadrez. |
 
 A escolha da métrica depende do tipo de dado e da relação entre as variáveis.
+</details>
 
 ---
+
+<details>
+<summary><strong>Vantagens e desvantagens</strong></summary>
 
 ## Vantagens e desvantagens
 
@@ -99,8 +124,12 @@ A escolha da métrica depende do tipo de dado e da relação entre as variáveis
 - Fica lento com muitos dados, pois precisa comparar o novo ponto com todos os outros.
 - Depende fortemente da escala das variáveis (é importante normalizar os dados).
 - Pode se confundir com dados muito ruidosos ou com classes desbalanceadas.
+</details>
 
 ---
+
+<details>
+<summary><strong>Quando usar o KNN</strong></summary>
 
 ## Quando usar o KNN
 
@@ -114,8 +143,12 @@ Mas não é quando:
 - O conjunto de dados é muito grande (fica lento).
 - Existem muitas variáveis.
 - As classes têm tamanhos muito diferentes.
+</details>
 
 ---
+
+<details>
+<summary><strong>Exemplo de código prático</strong></summary>
 
 ## Exemplo de código prático
 
@@ -149,5 +182,3 @@ pred = model.predict(X_test)
 
 # Avaliar
 print("Acurácia:", accuracy_score(y_test, pred))
-
-```

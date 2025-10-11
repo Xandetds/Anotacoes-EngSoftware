@@ -4,6 +4,11 @@ A **escalabilidade** é a capacidade de um sistema lidar com um aumento de carga
 
 Ela permite que a aplicação cresça de forma sustentável, atendendo mais usuários sem precisar ser reescrita do zero.
 
+---
+
+<details>
+<summary><strong>Principais formas de escalar um sistema</strong></summary>
+
 ### Principais formas de escalar um sistema
 
 - Escalabilidade Vertical (Scale Up)
@@ -23,8 +28,12 @@ Ela permite que a aplicação cresça de forma sustentável, atendendo mais usu�
     
     **Exemplo:** em vez de um servidor processar tudo, usar cinco servidores balanceados.
     
+</details>
 
 ---
+
+<details>
+<summary><strong>Gargalos de desempenho</strong></summary>
 
 ### Gargalos de desempenho
 
@@ -37,8 +46,12 @@ Pode ocorrer no banco de dados, na CPU, na rede ou em um serviço externo.
 Uma API que processa pedidos, mas demora muito porque cada requisição faz cálculos complexos e acessa o banco várias vezes.
 
 Mesmo com vários usuários simultâneos, o desempenho fica travado por esse ponto.
+</details>
 
 ---
+
+<details>
+<summary><strong>Experimento Prático – API de E-commerce com Gargalo e Cache Redis</strong></summary>
 
 ### Experimento Prático – API de E-commerce com Gargalo e Cache Redis
 
@@ -58,6 +71,9 @@ As etapas principais foram:
 3. Repetir os testes de carga e comparar os resultados.
 
 ---
+
+<details>
+<summary><strong>Cenário inicial – com gargalo</strong></summary>
 
 ### **Cenário inicial – com gargalo**
 
@@ -98,8 +114,12 @@ scenarios:
  As requisições foram processadas diretamente pelo servidor, sem cache.
 
 O tempo médio foi alto, e a API apresentou gargalos sob carga.
+</details>
 
 ---
+
+<details>
+<summary><strong>Implementação do Cache com Redis</strong></summary>
 
 ### **Implementação do Cache com Redis**
 
@@ -119,8 +139,12 @@ app.get("/products", async (req, res) => {
 ```
 
 Dessa forma, a primeira requisição busca os dados normalmente, e as próximas vêm direto da memória, sem processar tudo de novo.
+</details>
 
 ---
+
+<details>
+<summary><strong>Cenário otimizado – com cache Redis</strong></summary>
 
 ### **Cenário otimizado – com cache Redis**
 
@@ -136,8 +160,12 @@ Dessa forma, a primeira requisição busca os dados normalmente, e as próximas 
 - Erros: 0
 
 As requisições subsequentes foram respondidas quase instantaneamente, mostrando o impacto real do cache em sistemas escaláveis.
+</details>
 
 ---
+
+<details>
+<summary><strong>Comparativo dos resultados</strong></summary>
 
 ### **Comparativo dos resultados**
 
@@ -153,8 +181,12 @@ As requisições subsequentes foram respondidas quase instantaneamente, mostrand
 A aplicação se tornou mais escalável e responsiva.
 
 Com o Redis, as requisições subsequentes são atendidas diretamente da memória, reduzindo a carga no servidor e eliminando o gargalo.
+</details>
 
 ---
+
+<details>
+<summary><strong>Conclusões e aprendizados</strong></summary>
 
 ### Conclusões e aprendizados
 
@@ -163,3 +195,6 @@ Com o Redis, as requisições subsequentes são atendidas diretamente da memóri
 - O **cache Redis** é uma solução simples e poderosa para aliviar o servidor e melhorar o tempo de resposta.
 - **Docker** facilita a configuração do ambiente e o isolamento dos serviços.
 - Ferramentas como **Artillery** ajudam a medir o impacto real das otimizações.
+</details>
+</details>
+
