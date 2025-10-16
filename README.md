@@ -1,4 +1,4 @@
-# 📖 Anotações de Estudos
+#  Anotações de Estudos
 
 Este repositório reúne as anotações produzidas ao longo da graduação e de estudos independentes, organizadas por disciplina em pastas separadas.  
 Cada arquivo em **Markdown** apresenta conteúdos abordados em aula ou em leituras complementares — incluindo resumos, definições, esquemas, exemplos práticos e observações relevantes.
